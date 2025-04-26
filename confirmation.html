@@ -9,12 +9,8 @@
 <body>
     <div class="confirmation-container">
         <div id="thank-you-message">
-            <h1>Дякуємо!</h1>
-            <p>Ваш бриф успішно надіслано.</p>
-            <div class="progress-bar">
-                <div class="progress"></div>
-            </div>
-            <p class="redirect-message">Натисніть Enter для перегляду аналізу або зачекайте <span class="countdown">5</span> секунд...</p>
+            <h1>Thank you!</h1>
+            <p>Your brief has been successfully submitted.</p>
         </div>
 
         <div id="analysis-content" style="display: none;">
@@ -39,52 +35,66 @@
                     <div class="brief-section">
                         <p>Fast, cost-efficient development is critical, with a focus on creating an intuitive, engaging experience that can gather initial feedback from parents and educators for future improvements.</p>
                     </div>
+
+                    <div class="brief-section solution-structure">
+                        <h2 class="solution-title">Create Solution Artifact</h2>
+                        <p class="solution-description">Based on the client brief, we will create a comprehensive solution with the following structure:</p>
+                        <div class="solution-steps">
+                            <div class="step">
+                                <span class="step-number">1</span>
+                                <span class="step-text">User Experience (UX) Observations</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">2</span>
+                                <span class="step-text">User Interface (UI) Observations</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">3</span>
+                                <span class="step-text">Proposed Solutions</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">4</span>
+                                <span class="step-text">Scope of Work (SOW)</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">5</span>
+                                <span class="step-text">Competition list with small description about each one</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">6</span>
+                                <span class="step-text">Tech Stack - what tools will be potential useful</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">7</span>
+                                <span class="step-text">Estimation</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">8</span>
+                                <span class="step-text">Final Notes</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Функція для показу аналізу
+        // Function to show analysis
         function showAnalysis() {
             document.getElementById('thank-you-message').style.display = 'none';
             document.getElementById('analysis-content').style.display = 'block';
             window.scrollTo(0, 0);
         }
 
-        // Обробка натискання Enter
+        // Handle Enter key press
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {
                 showAnalysis();
             }
         });
 
-        // Автоматичний перехід через 5 секунд
-        let countdown = 5;
-        const countdownElement = document.querySelector('.countdown');
-        
-        const timer = setInterval(() => {
-            countdown--;
-            if (countdownElement) {
-                countdownElement.textContent = countdown;
-            }
-            
-            if (countdown <= 0) {
-                clearInterval(timer);
-                showAnalysis();
-            }
-        }, 1000);
-
-        // Анімація прогрес-бару
-        const progress = document.querySelector('.progress');
-        if (progress) {
-            progress.style.transition = 'width 5s linear';
-            setTimeout(() => {
-                progress.style.width = '100%';
-            }, 100);
-        }
-
-        // Функція копіювання тексту
+        // Function to copy text
         function copyBriefContent() {
             const content = document.getElementById('briefContent').innerText;
             navigator.clipboard.writeText(content).then(() => {
