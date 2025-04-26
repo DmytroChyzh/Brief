@@ -612,4 +612,101 @@ input[type="checkbox"] {
     to {
         transform: translate(-50%, -50%) rotate(360deg);
     }
+}
+
+/* Brief Analysis Styles */
+.brief-analysis {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: var(--surface);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    position: relative;
+}
+
+.brief-analysis h1 {
+    color: var(--text);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.brief-analysis p {
+    color: var(--text);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.copy-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.copy-button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.copy-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.copy-button.copied {
+    background: var(--success);
+}
+
+.brief-content {
+    background: var(--background);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+.brief-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.brief-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+@media (max-width: 640px) {
+    .brief-analysis {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .brief-analysis h1 {
+        font-size: 2rem;
+    }
+
+    .copy-button {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+    }
 } 
