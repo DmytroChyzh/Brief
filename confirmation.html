@@ -3,35 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brief Analysis</title>
+    <title>Brief Confirmation</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="brief-analysis">
-        <h1>Brief Analysis</h1>
-        <button class="copy-button" onclick="copyBriefContent()">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-            </svg>
-            Copy Text
-        </button>
-        <div class="brief-content" id="briefContent">
-            <div class="brief-section">
-                <p>The client aims to develop an educational mobile app called Lighti – Kids' STEM Adventure, combining learning and fun through a character-driven experience. The character, Lighti, acts as a playful mentor guiding children (ages 5–10) through physics, mechanics, and electricity concepts using interactive challenges.</p>
+    <div class="confirmation-container">
+        <div id="thank-you-message">
+            <h1>Дякуємо!</h1>
+            <p>Ваш бриф успішно надіслано.</p>
+            <div class="progress-bar">
+                <div class="progress"></div>
             </div>
-            <div class="brief-section">
-                <p>The client has already developed the core concept and character design and outlined the educational mechanics. They seek to launch a lightweight MVP within 2–3 months, focusing on lean development due to a limited budget.</p>
-            </div>
-            <div class="brief-section">
-                <p>The app should have a bright, cartoonish design with simple navigation, be scalable for future content expansion, and maintain a balance between fun and learning. No deep integrations are required at the MVP stage. Basic animations of Lighti are requested to bring the character to life.</p>
-            </div>
-            <div class="brief-section">
-                <p>Fast, cost-efficient development is critical, with a focus on creating an intuitive, engaging experience that can gather initial feedback from parents and educators for future improvements.</p>
+            <p class="redirect-message">Натисніть Enter для перегляду аналізу або зачекайте <span class="countdown">5</span> секунд...</p>
+        </div>
+
+        <div id="analysis-content" style="display: none;">
+            <div class="brief-analysis">
+                <h1>Brief Analysis</h1>
+                <button class="copy-button" onclick="copyBriefContent()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Copy Text
+                </button>
+                <div class="brief-content" id="briefContent">
+                    <div class="brief-section">
+                        <p>The client aims to develop an educational mobile app called Lighti – Kids' STEM Adventure, combining learning and fun through a character-driven experience. The character, Lighti, acts as a playful mentor guiding children (ages 5–10) through physics, mechanics, and electricity concepts using interactive challenges.</p>
+                    </div>
+                    <div class="brief-section">
+                        <p>The client has already developed the core concept and character design and outlined the educational mechanics. They seek to launch a lightweight MVP within 2–3 months, focusing on lean development due to a limited budget.</p>
+                    </div>
+                    <div class="brief-section">
+                        <p>The app should have a bright, cartoonish design with simple navigation, be scalable for future content expansion, and maintain a balance between fun and learning. No deep integrations are required at the MVP stage. Basic animations of Lighti are requested to bring the character to life.</p>
+                    </div>
+                    <div class="brief-section">
+                        <p>Fast, cost-efficient development is critical, with a focus on creating an intuitive, engaging experience that can gather initial feedback from parents and educators for future improvements.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
+        // Функція для показу аналізу
+        function showAnalysis() {
+            document.getElementById('thank-you-message').style.display = 'none';
+            document.getElementById('analysis-content').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // Обробка натискання Enter
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                showAnalysis();
+            }
+        });
+
+        // Автоматичний перехід через 5 секунд
+        let countdown = 5;
+        const countdownElement = document.querySelector('.countdown');
+        
+        const timer = setInterval(() => {
+            countdown--;
+            if (countdownElement) {
+                countdownElement.textContent = countdown;
+            }
+            
+            if (countdown <= 0) {
+                clearInterval(timer);
+                showAnalysis();
+            }
+        }, 1000);
+
+        // Анімація прогрес-бару
+        const progress = document.querySelector('.progress');
+        if (progress) {
+            progress.style.transition = 'width 5s linear';
+            setTimeout(() => {
+                progress.style.width = '100%';
+            }, 100);
+        }
+
+        // Функція копіювання тексту
         function copyBriefContent() {
             const content = document.getElementById('briefContent').innerText;
             navigator.clipboard.writeText(content).then(() => {
