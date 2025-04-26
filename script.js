@@ -7,47 +7,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Autofill for new project
     const newProjectAnswers = {
-        'company_name': 'Administrative Service Center of Lviv (CNAP Lviv)',
-        'business_area': 'Providing administrative services to citizens and businesses',
-        'geography': 'Lviv and Lviv territorial community',
-        'social_links': 'https://cnap.city-adm.lviv.ua/',
-        'project_name': 'New Digital Portal for CNAP Lviv',
-        'project_description': 'Creating a modern website/portal for convenient submission of applications for administrative services, appointment booking at CNAP, and providing service information.',
-        'project_goals': 'Improving convenience for residents, digitalization of services, automation of application submission processes.',
-        'target_audience': 'Ukrainian citizens, Lviv residents, entrepreneurs, foreigners living in the city.',
-        'user_problems': 'Reducing document submission time, minimizing queues, improving information accessibility.',
-        'features': '- Online appointment booking\n- Electronic application submission\n- User account\n- Service category search\n- Integration with government registries',
-        'integrations': 'Integration with government registries, CRM/ERP systems',
-        'examples': 'Diia, e-Malyatko',
-        'budget': 'Depends on the scope of functionality (open for discussion)',
-        'deadline': '6 months',
-        'additional_info': '- Responsive design\n- Multilingual support (Ukrainian / English)\n- Accessibility for people with disabilities\n- Possibility of mobile app integration in the future'
+        'company_name': '[Not specified]',
+        'business_area': 'Educational technology, children\'s learning apps',
+        'geography': 'International focus, primarily targeting English-speaking countries',
+        'social_links': '[Not specified]',
+        'project_name': 'Lighti – Kids\' STEM Adventure',
+        'project_description': 'Develop an educational app for children that mixes learning and entertainment through a character named Lighti. The app teaches basic concepts of physics, mechanics, and electricity through playful interactive challenges.',
+        'project_goals': '- Introduce STEM concepts at an early age\n- Create an engaging educational experience\n- Launch an MVP for real-user testing within a few months\n- Keep the development cost-effective due to limited budget',
+        'target_audience': 'Children aged 5–10\nParents and educators (as influencers and feedback providers)',
+        'user_problems': '- Need for engaging, interactive learning methods\n- Need for fun introduction to STEM topics',
+        'features': '- Character-guided learning paths (Lighti)\n- Interactive physics and mechanics challenges\n- Reward system for completed levels',
+        'integrations': 'None specified at MVP stage',
+        'examples': 'Educational mobile games for kids with a strong narrative\nReference: ABCmouse, Khan Academy Kids',
+        'budget': 'Limited / Bootstrapped (lean development needed)',
+        'deadline': 'MVP: 2-3 months, Full launch: TBD based on MVP results',
+        'additional_info': '- Must be lightweight for mobile devices\n- Scalable to add new levels in the future\n- Basic character animation\n- Informal feedback gathering during MVP testing phase\n- Easy onboarding for kids\n- Future development plans include more levels and educational content based on user feedback'
     };
 
     // Autofill for existing project
     const existingProjectAnswers = {
-        'company_name': 'Administrative Service Center of Lviv (CNAP Lviv)',
-        'business_area': 'Providing administrative services to citizens and businesses',
-        'geography': 'Lviv and Lviv territorial community',
-        'social_links': 'https://cnap.city-adm.lviv.ua/',
-        'project_description': 'The current website provides basic functions but has an outdated interface and limited mobile optimization.',
-        'project_links': 'https://cnap.city-adm.lviv.ua/',
-        'project_goals': 'Complete UI/UX update, mobile version implementation, navigation improvement, simplification of service booking process.',
-        'main_issues': 'Outdated interface, limited mobile optimization, complex navigation.',
-        'success_criteria': 'Modern responsive design, simple navigation, convenient service booking process.',
-        'design_references': 'Diia, e-Malyatko - modern government services with simple interfaces',
-        'existing_features': '- Basic service information\n- Registry integrations\n- Appointment booking',
-        'new_features': '- Fully responsive design\n- Simplified navigation\n- Feedback and quality assessment system\n- Multilingual support',
-        'integrations': 'Existing registry integrations must be preserved',
-        'technical_constraints': 'Full responsiveness + multilingual support required',
-        'budget': 'To be discussed based on the scope of work',
-        'deadline': '4-5 months',
-        'milestones': '1. Analysis and planning\n2. Design and prototyping\n3. Development\n4. Testing\n5. Launch',
-        'additional_info': 'Desire to create a system for feedback and service quality assessment'
+        'company_name': '[Not specified]',
+        'business_area': 'Educational technology, children\'s learning apps',
+        'geography': 'International focus, primarily targeting English-speaking countries',
+        'social_links': '[Not specified]',
+        'project_description': 'Educational app concept for children (Lighti) with basic mechanics outlined and character design created. The project needs full UI/UX design and development implementation.',
+        'project_links': '[Development stage - no live links yet]',
+        'project_stage': 'concept',
+        'project_goals': '- Design user-friendly, engaging UI/UX around the Lighti concept\n- Create visuals for educational interactions and challenges\n- Prepare basic animations for the character\n- Design a minimal but expandable MVP structure',
+        'main_issues': '- No formal UX/UI design yet\n- No detailed user research conducted\n- Need for lightweight and scalable implementation',
+        'success_criteria': '- Intuitive app flow for children aged 5–10\n- Cartoonish, bright, motivating design\n- Mobile-first experience (iOS/Android)',
+        'design_references': 'Looking for cartoonish, bright, and motivating design examples from successful children\'s educational apps',
+        'existing_features': '- Core concept is developed\n- Character design (Lighti) is created\n- Basic educational mechanics are outlined',
+        'new_features': '- Complete UI/UX design\n- Interactive challenges and rewards\n- Character animations\n- Cross-platform compatibility',
+        'integrations': 'No external integrations required for MVP',
+        'technical_constraints': '- Must be lightweight for mobile devices\n- Easy scaling for future levels and content updates\n- Cross-platform compatibility (iOS and Android)',
+        'budget': 'Limited - seeking budget-friendly solutions',
+        'deadline': 'Fast MVP development needed (2-3 months target)',
+        'milestones': '1. UI/UX Design (2-3 weeks)\n2. Visual Assets Creation (2-3 weeks)\n3. MVP Development (4-6 weeks)\n4. Testing & Refinement (2-3 weeks)',
+        'additional_info': 'Available Resources:\n- Concept document\n- Character sketches\n- Early gameplay mechanics notes\n- Informal feedback from parents/educators\n\nSpecial Requests:\n- Fast MVP development\n- Budget-friendly solutions\n- Focus on playful learning'
     };
 
     // Product type checkboxes
-    const productTypes = ['website', 'crm', 'mobile'];
+    const productTypes = ['mobile', 'saas', 'other'];
 
     // Function to fill all fields in a form
     const fillAllFields = (form, answers) => {
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check product type checkboxes if present
         if (form.id === 'brief-form') {
             form.querySelectorAll('input[type="checkbox"][name="product_type"]').forEach(checkbox => {
-                if (['website', 'crm', 'mobile'].includes(checkbox.value)) {
+                if (['mobile', 'saas', 'other'].includes(checkbox.value)) {
                     checkbox.checked = true;
                 }
             });
