@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brief Submitted</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .confirmation-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .confirmation-header {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .confirmation-header h1 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .confirmation-message {
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 2rem;
+        }
+        .data-section {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+        .data-section:last-child {
+            border-bottom: none;
+        }
+        .data-section h2 {
+            color: var(--text);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .copy-button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+        .copy-button:hover {
+            background: var(--primary-color-dark, #4a5af7);
+        }
+        .copy-button svg {
+            width: 1.2em;
+            height: 1.2em;
+        }
+        .copy-success {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            animation: fadeInOut 2s ease forwards;
+        }
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(-20px); }
+            20% { opacity: 1; transform: translateY(0); }
+            80% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container" id="thank-you-container">
+        <div class="confirmation-header">
+            <h1>Thank you for your brief! 🎉</h1>
+        </div>
+        <div class="confirmation-message">
+            We have received your project brief and will begin analyzing it shortly.
+        </div>
+    </div>
+
+    <div class="confirmation-container" id="analysis-container" style="display: none;">
+        <div class="confirmation-header">
+            <h1>Brief Analysis</h1>
+            <button class="copy-button" onclick="copyAnalysis()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                Copy Text
+            </button>
+        </div>
+        <div class="data-section">
+            <h2>📑 Client Information:</h2>
+            <p>Company: Administrative Service Center of Lviv (CNAP Lviv)</p>
+            <p>Current website: cnap.city-adm.lviv.ua</p>
+            <p>Activity description: Providing administrative and government services to residents and businesses in Lviv and Lviv community.</p>
+            <p>Main services: electronic applications, online appointment booking, consultations, certificates, extracts, etc.</p>
+        </div>
+
+        <div class="data-section">
+            <h2>📌 Project Tasks:</h2>
+            <p>Client needs:</p>
+            <ul>
+                <li>Portal redesign focusing on modernity, ease of use, and compliance with modern UX practices.</li>
+                <li>Improvement of mobile version and responsiveness across different devices.</li>
+                <li>Optimization of service finding and application submission process.</li>
+                <li>Increasing speed of information access.</li>
+                <li>Add or improve integration with government registries.</li>
+                <li>Provide convenient user account with ability to track application status.</li>
+                <li>Maintain official but friendly communication style.</li>
+            </ul>
+        </div>
+
+        <div class="data-section">
+            <h2>🎯 Desired Results:</h2>
+            <ul>
+                <li>Increase in electronic applications through the website.</li>
+                <li>Reduced load on physical offices.</li>
+                <li>Improved user satisfaction (including people with disabilities).</li>
+            </ul>
+        </div>
+
+        <div class="data-section">
+            <h2>🛠️ Technical Requirements:</h2>
+            <ul>
+                <li>Multilingual support (Ukrainian, English).</li>
+                <li>High level of accessibility (WCAG standards).</li>
+                <li>Integration with CRM/ERP, registries, payment systems.</li>
+                <li>Readiness for further portal development and mobile solutions.</li>
+            </ul>
+        </div>
+
+        <div class="data-section">
+            <h2>🎨 Design Preferences:</h2>
+            <ul>
+                <li>Clean, understandable interface.</li>
+                <li>"Mobile first" orientation.</li>
+                <li>Inspiration from modern government platforms ("Diia", GOV.UA).</li>
+                <li>Color scheme: official blue + neutral light tones.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                document.getElementById('thank-you-container').style.display = 'none';
+                document.getElementById('analysis-container').style.display = 'block';
+                window.scrollTo(0, 0);
+            }
+        });
+
+        function copyAnalysis() {
+            // Get all text content from the analysis sections
+            const sections = document.querySelectorAll('#analysis-container .data-section');
+            let textToCopy = '';
+            
+            sections.forEach(section => {
+                // Get the heading
+                const heading = section.querySelector('h2');
+                if (heading) {
+                    textToCopy += heading.textContent + '\n\n';
+                }
+                
+                // Get paragraphs
+                section.querySelectorAll('p').forEach(p => {
+                    textToCopy += p.textContent + '\n';
+                });
+                
+                // Get list items
+                const list = section.querySelector('ul');
+                if (list) {
+                    list.querySelectorAll('li').forEach(li => {
+                        textToCopy += '• ' + li.textContent + '\n';
+                    });
+                }
+                
+                textToCopy += '\n';
+            });
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                // Show success message
+                const message = document.createElement('div');
+                message.className = 'copy-success';
+                message.textContent = 'Text copied successfully!';
+                document.body.appendChild(message);
+                
+                // Remove message after animation
+                setTimeout(() => {
+                    message.remove();
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html> 

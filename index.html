@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Brief Forms</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-switcher">
+        <button class="switch-button active" data-form="new">New Project</button>
+        <button class="switch-button" data-form="existing">Existing Project</button>
+    </div>
+
+    <div class="container">
+        <!-- New Project Form -->
+        <form id="brief-form" class="brief-form active">
+            <div class="form-header">
+                <h1>Digital Project Brief</h1>
+                <p>👋 Hi! Thank you for reaching out to us! Please fill out this brief form.</p>
+            </div>
+
+            <div class="form-section">
+                <h2>🔹 1. Company Information</h2>
+                
+                <div class="input-group">
+                    <label>📛 Company Name</label>
+                    <input type="text" name="company_name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>📈 Industry</label>
+                    <input type="text" name="business_area" required>
+                </div>
+
+                <div class="input-group">
+                    <label>🌍 Business Geography</label>
+                    <input type="text" name="geography" placeholder="Countries / regions">
+                </div>
+
+                <div class="input-group">
+                    <label>📑 Website / Social Media Links</label>
+                    <input type="text" name="social_links" placeholder="If any">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🔹 2. Project Description</h2>
+                
+                <div class="input-group">
+                    <label>📌 Project Name</label>
+                    <input type="text" name="project_name" placeholder="If any">
+                </div>
+
+                <div class="input-group">
+                    <label>✏️ Describe Your Project</label>
+                    <textarea name="project_description" placeholder="What do you want to create, what's the idea, what problem should it solve?" required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>🎯 Main Project Goals</label>
+                    <textarea name="project_goals" placeholder="For example: customer acquisition, business process automation, increasing online sales, service improvement, etc." required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>📱 Product Type</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="product_type" value="website">
+                            Website
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="product_type" value="shop">
+                            E-commerce
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="product_type" value="crm">
+                            CRM / ERP System
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="product_type" value="saas">
+                            SaaS
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="product_type" value="mobile">
+                            Mobile App
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="product_type" value="ai">
+                            AI / ML Solution
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="product_type" value="design">
+                            Design / Branding
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="product_type" value="other">
+                            Other
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🔹 3. Target Audience</h2>
+                
+                <div class="input-group">
+                    <label>👥 Who are your main users?</label>
+                    <textarea name="target_audience" placeholder="Age, gender, geography, interests, profession, etc." required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>📌 What problems or needs do you want to address?</label>
+                    <textarea name="user_problems" required></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🔹 4. Features and Integrations</h2>
+                
+                <div class="input-group">
+                    <label>📑 Core Product Features</label>
+                    <textarea name="features" placeholder="List the main features" required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>📲 Required Integrations</label>
+                    <textarea name="integrations" placeholder="CRM, ERP, payment systems, messengers, APIs, etc."></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🔹 5. Design and Style</h2>
+                
+                <div class="input-group">
+                    <label>🎨 Do you have a brandbook or corporate style?</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="has_brandbook" value="yes">
+                            Yes
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="has_brandbook" value="no">
+                            No
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>📑 Examples of projects you like</label>
+                    <textarea name="examples" placeholder="Links and what you like about them (design, functionality, structure, style)"></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🔹 6. Budget and Timeline</h2>
+                
+                <div class="input-group">
+                    <label>💸 Estimated Project Budget</label>
+                    <input type="text" name="budget">
+                </div>
+
+                <div class="input-group">
+                    <label>⏳ Desired Launch Date</label>
+                    <input type="text" name="deadline" placeholder="MVP / test version">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🔹 7. Additional Information</h2>
+                
+                <div class="input-group">
+                    <label>📢 Additional Comments and Requirements</label>
+                    <textarea name="additional_info" placeholder="Any other ideas or requirements"></textarea>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <button type="submit" class="submit-button">Submit Brief</button>
+            </div>
+        </form>
+
+        <!-- Existing Project Form -->
+        <form id="existing-brief-form" class="brief-form">
+            <div class="form-header">
+                <h1>Brief for Existing Projects</h1>
+                <p>👋 Hi! Please fill out this form for your existing project that needs redesign, improvement, or completion.</p>
+            </div>
+
+            <div class="form-section">
+                <h2>🔹 1. Company Information</h2>
+                
+                <div class="input-group">
+                    <label>📛 Company Name</label>
+                    <input type="text" name="company_name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>📈 Industry</label>
+                    <input type="text" name="business_area" required>
+                </div>
+
+                <div class="input-group">
+                    <label>🌍 Business Geography</label>
+                    <input type="text" name="geography" placeholder="Countries / regions">
+                </div>
+
+                <div class="input-group">
+                    <label>📑 Website / App / Social Media Links</label>
+                    <input type="text" name="social_links" placeholder="If any">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🔹 2. Project Flows</h2>
+                
+                <div class="input-group">
+                    <label>🎥 Project Video Files</label>
+                    <div class="media-upload-container">
+                        <input type="file" name="video_files" accept="video/*" multiple class="media-input" data-type="video">
+                        <button type="button" class="upload-btn">Upload Videos</button>
+                        <div class="file-types-info">Supported files: MP4, MOV, AVI</div>
+                        <div class="preview-container grid-preview">
+                            <div class="upload-placeholder">
+                                Drag and drop video files here or click the Upload button
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🔹 3. Project Details</h2>
+                
+                <div class="input-group">
+                    <label>📌 Current Project Stage</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="project_stage" value="launched" required>
+                            Fully Launched (needs redesign/improvement)
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="project_stage" value="partial">
+                            Partially Developed (needs completion)
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="project_stage" value="concept">
+                            Concept Stage (wireframes/prototypes/design ready)
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="project_stage" value="other">
+                            Other
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>✏️ Describe Your Current Project</label>
+                    <textarea name="project_description" placeholder="What is it about, what's been done, what needs to be completed?" required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>📑 Links to Existing Project</label>
+                    <textarea name="project_links" placeholder="Links to current project, design, wireframes, or documentation"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>📎 Project Documents</label>
+                    <div class="media-upload-container">
+                        <input type="file" name="project_files" accept=".pdf,.doc,.docx,.xls,.xlsx,.txt" multiple class="media-input" data-type="documents">
+                        <button type="button" class="upload-btn">Upload Files</button>
+                        <div class="file-types-info">Supported files: PDF, DOC, XLS, TXT</div>
+                        <div class="preview-container grid-preview">
+                            <div class="upload-placeholder">
+                                Drag and drop files here or click the Upload button
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>📝 Additional Notes</label>
+                    <textarea name="media_notes" placeholder="Any additional notes about the uploaded files"></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🔹 4. Goals and Expectations</h2>
+                
+                <div class="input-group">
+                    <label>🎯 Main Project Goals</label>
+                    <textarea name="project_goals" placeholder="E.g., complete redesign, UI/UX improvements, new features, development completion, rebranding, etc." required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>📌 Main Issues to Address</label>
+                    <textarea name="main_issues" required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>📈 Success Criteria</label>
+                    <textarea name="success_criteria" placeholder="How do you envision successful project completion?" required></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🔹 5. Design and Style</h2>
+                
+                <div class="input-group">
+                    <label>🎨 Design Approach</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="design_approach" value="keep" required>
+                            Keep Current Style (minimal updates)
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="design_approach" value="modernize">
+                            Modernize Current Style
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="design_approach" value="new">
+                            Create New Style
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>📑 Design References</label>
+                    <textarea name="design_references" placeholder="Links to designs you like and what specifically appeals to you"></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🔹 6. Technical Details</h2>
+                
+                <div class="input-group">
+                    <label>📱 Existing Features</label>
+                    <textarea name="existing_features" required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>📋 Desired New Features</label>
+                    <textarea name="new_features" required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>📲 Integrations</label>
+                    <textarea name="integrations" placeholder="Existing or required: CRM, ERP, payment systems, APIs, etc."></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>🛠️ Technical Constraints</label>
+                    <textarea name="technical_constraints" placeholder="Tech stack, servers, programming languages, platform specifics, etc."></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🔹 7. Budget and Timeline</h2>
+                
+                <div class="input-group">
+                    <label>💸 Estimated Budget</label>
+                    <input type="text" name="budget">
+                </div>
+
+                <div class="input-group">
+                    <label>⏳ Desired Completion Date</label>
+                    <input type="text" name="deadline">
+                </div>
+
+                <div class="input-group">
+                    <label>📆 Important Milestones</label>
+                    <textarea name="milestones" placeholder="Any specific deadlines or stages to consider"></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🔹 8. Additional Information</h2>
+                
+                <div class="input-group">
+                    <label>📢 Additional Comments</label>
+                    <textarea name="additional_info" placeholder="Any other ideas or important details to consider"></textarea>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <button type="submit" class="submit-button">Submit Brief</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
