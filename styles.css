@@ -728,8 +728,9 @@ input[type="checkbox"] {
 
 #thank-you-message h1 {
     color: var(--primary-color);
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
 }
 
 #thank-you-message p {
@@ -738,30 +739,14 @@ input[type="checkbox"] {
     margin-bottom: 2rem;
 }
 
-.progress-bar {
-    width: 100%;
-    height: 4px;
-    background: var(--border);
-    border-radius: 2px;
-    margin: 2rem 0;
-    overflow: hidden;
-}
-
-.progress {
-    width: 0;
-    height: 100%;
-    background: var(--primary-color);
-    transition: width 5s linear;
-}
-
 .redirect-message {
     color: var(--text-light);
-    font-size: 1rem;
-}
-
-.countdown {
-    font-weight: bold;
-    color: var(--primary-color);
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    background: var(--background);
+    border-radius: 0.5rem;
+    display: inline-block;
+    margin-top: 2rem;
 }
 
 @media (max-width: 640px) {
@@ -771,7 +756,7 @@ input[type="checkbox"] {
     }
 
     #thank-you-message h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     #thank-you-message p {
